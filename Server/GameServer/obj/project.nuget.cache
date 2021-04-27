@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CE5bagOjLP/gvN0BY9zEE0YkfcH4r6blUbSHQWAWZXyVN5sTXVzhpj3WhYzibc72tN9ZHB7dlm0eOlYruX49bw==",
+  "dgSpecHash": "zoRDQvCrUSILp0G9+NQBnen74z3EoPU0ciOJRwHVoh6LT/meZXLH6nIxshNC2j2bfZIMc9wyFQsP1quHF5DwOQ==",
   "success": true,
-  "projectFilePath": "C:\\MyApp\\MultiplayerPOC\\GameServer-POC\\GameServer\\GameServer.csproj",
+  "projectFilePath": "C:\\MyApp\\MultiplayerRPG_POC\\MultiplayerPOC\\Server\\GameServer\\GameServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User01\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
   ],

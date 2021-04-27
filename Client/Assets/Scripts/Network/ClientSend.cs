@@ -55,5 +55,19 @@ public class ClientSend : MonoBehaviour
     }
 
 
+    /// <summary>Sends player position to the server.</summary>
+    /// <param name="_inputs"></param>
+    public static void MoveTo(Vector3 point)
+    {
+        using (Packet _packet = new Packet((int)ClientPackets.moveTo))
+        {
+            _packet.Write(Client.instance.myId);
+            _packet.Write(point);
+
+            SendUDPData(_packet);
+        }
+    }
+
+
     #endregion
 }

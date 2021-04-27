@@ -1,3 +1,4 @@
+using Player;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -55,6 +56,14 @@ public class ClientHandle : MonoBehaviour
         {
             _player.transform.rotation = _rotation;
         }
+    }
+
+    public static void MoveTo(Packet _packet)
+    {
+        int _id = _packet.ReadInt();
+        Vector3 _point = _packet.ReadVector3();
+
+        GameManager.players[_id].MoveTo(_point);
     }
 
     public static void PlayerDisconnected(Packet _packet)

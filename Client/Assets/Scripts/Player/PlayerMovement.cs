@@ -13,7 +13,7 @@ namespace Player
         private Transform target;
 
         //reference to our agent
-        private NavMeshAgent agent;
+        public NavMeshAgent agent;
 
         //reference to our camera
         private Camera cam;
@@ -23,6 +23,8 @@ namespace Player
 
         //interctable control
         private InteractableObject focus;
+
+
 
 
         // Start is called before the first frame update
@@ -90,38 +92,27 @@ namespace Player
             if (target != null)
             {
                 //if target exist, so go up to the target
-                agent.SetDestination(target.position);
+                //agent.SetDestination(target.position);
+                MoveToPoint(target.position);
 
                 //look at GameObject target
                 FaceTarget();
             }
+
+            //TODO send position to server
+            //GameManager.players[Client.instance.myId].transform.position = agent.transform.position;
+            //GameManager.players[Client.instance.myId].transform.rotation = agent.transform.rotation;
+            //ClientSend.PlayerMovement();
         }
-
-
-        private void FixedUpdate()
-        {
-           //SendInpuToServer();
-        }
-
-        //TODO refactory this
-        /// <summary>Sends player input to the server.</summary>
-        private void SendInpuToServer()
-        {
-            bool[] inputs = new bool[]
-            {
-            Input.GetKey(KeyCode.Y),
-            Input.GetKey(KeyCode.H),
-            Input.GetKey(KeyCode.G),
-            Input.GetKey(KeyCode.J),
-            };
-
-            ClientSend.PlayerMovement(inputs);
-        }
+    
 
         //method to move our agent/player to the position we pass as parameter
-        private void MoveToPoint(Vector3 point)
+        private void MoveToPoint(Vector3 _point)
         {
-            agent.SetDestination(point);
+            ClientSend.MoveTo(_point);
+
+            //agent.SetDestination(point);
+            
         }
 
         //method

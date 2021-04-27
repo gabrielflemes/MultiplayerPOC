@@ -24,3 +24,16 @@ C:\MyApp\GameServer-POC\GameServer\obj\Debug\netcoreapp3.1\GameServer.csproj.Cor
 C:\MyApp\GameServer-POC\GameServer\obj\Debug\netcoreapp3.1\GameServer.dll
 C:\MyApp\GameServer-POC\GameServer\obj\Debug\netcoreapp3.1\GameServer.pdb
 C:\MyApp\GameServer-POC\GameServer\obj\Debug\netcoreapp3.1\GameServer.genruntimeconfig.cache
+C:\MyApp\MultiplayerRPG_POC\MultiplayerPOC\Server\GameServer\bin\Debug\netcoreapp3.1\GameServer.exe
+C:\MyApp\MultiplayerRPG_POC\MultiplayerPOC\Server\GameServer\bin\Debug\netcoreapp3.1\GameServer.deps.json
+C:\MyApp\MultiplayerRPG_POC\MultiplayerPOC\Server\GameServer\bin\Debug\netcoreapp3.1\GameServer.runtimeconfig.json
+C:\MyApp\MultiplayerRPG_POC\MultiplayerPOC\Server\GameServer\bin\Debug\netcoreapp3.1\GameServer.runtimeconfig.dev.json
+C:\MyApp\MultiplayerRPG_POC\MultiplayerPOC\Server\GameServer\bin\Debug\netcoreapp3.1\GameServer.dll
+C:\MyApp\MultiplayerRPG_POC\MultiplayerPOC\Server\GameServer\bin\Debug\netcoreapp3.1\GameServer.pdb
+C:\MyApp\MultiplayerRPG_POC\MultiplayerPOC\Server\GameServer\obj\Debug\netcoreapp3.1\GameServer.csprojAssemblyReference.cache
+C:\MyApp\MultiplayerRPG_POC\MultiplayerPOC\Server\GameServer\obj\Debug\netcoreapp3.1\GameServer.AssemblyInfoInputs.cache
+C:\MyApp\MultiplayerRPG_POC\MultiplayerPOC\Server\GameServer\obj\Debug\netcoreapp3.1\GameServer.AssemblyInfo.cs
+C:\MyApp\MultiplayerRPG_POC\MultiplayerPOC\Server\GameServer\obj\Debug\netcoreapp3.1\GameServer.csproj.CoreCompileInputs.cache
+C:\MyApp\MultiplayerRPG_POC\MultiplayerPOC\Server\GameServer\obj\Debug\netcoreapp3.1\GameServer.dll
+C:\MyApp\MultiplayerRPG_POC\MultiplayerPOC\Server\GameServer\obj\Debug\netcoreapp3.1\GameServer.pdb
+C:\MyApp\MultiplayerRPG_POC\MultiplayerPOC\Server\GameServer\obj\Debug\netcoreapp3.1\GameServer.genruntimeconfig.cache

@@ -11,6 +11,7 @@ public enum ServerPackets
     spawnPlayer,
     playerPosition,
     playerRotation,
+    moveTo
 
 }
 
@@ -19,6 +20,7 @@ public enum ClientPackets
 {
     welcomeReceived = 1,
     playerMovement,
+    moveTo
 
 }
 

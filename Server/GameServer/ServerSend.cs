@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Text;
 
 namespace GameServer
@@ -128,6 +129,19 @@ namespace GameServer
                 _packet.Write(_player.rotation);
 
                 SendUDPDataToAll(_player.id, _packet);
+            }
+        }
+
+        /// <summary>Sends a player's point to all clients.</summary>
+        /// <param name="_player">The player whose position to update.</param>
+        public static void MoveTo(Player _player, Vector3 _point)
+        {
+            using (Packet _packet = new Packet((int)ServerPackets.moveTo))
+            {
+                _packet.Write(_player.id);
+                _packet.Write(_point);
+
+                SendUDPDataToAll(_packet);
             }
         }
         #endregion

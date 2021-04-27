@@ -30,26 +30,29 @@ namespace GameServer
         /// <summary>Processes player input and moves the player.</summary>
         public void Update()
         {
-            Vector2 _inputDirection = Vector2.Zero;
-            if (inputs[0])
-            {
-                _inputDirection.Y += 1;
-            }
+            //Vector2 _inputDirection = Vector2.Zero;
+            //if (inputs[0])
+            //{
+            //    _inputDirection.Y += 1;
+            //}
 
-            if (inputs[1])
-            {
-                _inputDirection.Y -= 1;
-            }
-            if (inputs[2])
-            {
-                _inputDirection.X += 1;
-            }
-            if (inputs[3])
-            {
-                _inputDirection.X -= 1;
-            }
+            //if (inputs[1])
+            //{
+            //    _inputDirection.Y -= 1;
+            //}
+            //if (inputs[2])
+            //{
+            //    _inputDirection.X += 1;
+            //}
+            //if (inputs[3])
+            //{
+            //    _inputDirection.X -= 1;
+            //}
 
-            Move(_inputDirection);
+            //Move(_inputDirection);
+
+            //ServerSend.PlayerPosition(this);
+
         }
 
         /// <summary>Calculates the player's desired movement direction and moves him.</summary>
@@ -73,6 +76,11 @@ namespace GameServer
         {
             inputs = _inputs;
             rotation = _rotation;
+        }
+
+        public void SetPosition(Vector3 _position)
+        {
+            position = _position;
         }
     }
 }

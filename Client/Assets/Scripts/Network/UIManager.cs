@@ -24,6 +24,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        startMenu.SetActive(true);
+    }
+
 
     public void ConnectToServer()
     {

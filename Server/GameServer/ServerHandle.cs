@@ -34,6 +34,16 @@ namespace GameServer
             Server.clients[_fromClient].player.SetInput(_inputs, _rotation);
         }
 
+        public static void MoveTo(int _fromClient, Packet _packet)
+        {
+            int clientId = _packet.ReadInt();
+            Vector3 point = _packet.ReadVector3();
+
+            ServerSend.MoveTo(Server.clients[_fromClient].player, point);
+            //Server.clients[_fromClient].player.SetPosition(position);
+
+        }
+
 
     }
 }

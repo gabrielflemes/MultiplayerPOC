@@ -51,9 +51,11 @@ public class GameManager : MonoBehaviour
 
         // I use GetComponentInChildren, cos my PlayerManager is in the GameObject inside "Player"
         //to access my PlayerManager component, I neet to acess where the component is located
-        player.GetComponentInChildren<PlayerManager>().Initialize(_id, _username);
+        player.GetComponent<PlayerManager>().Initialize(_id, _username);
 
         //same here, I need to Add the component that PlayerManager in located
         players.Add(_id, player.GetComponentInChildren<PlayerManager>());
     }
+
+
 }

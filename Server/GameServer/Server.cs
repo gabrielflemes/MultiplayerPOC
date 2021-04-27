@@ -134,6 +134,7 @@ namespace GameServer
             {
                 { (int)ClientPackets.welcomeReceived, ServerHandle.WelcomeReceived },
                 { (int)ClientPackets.playerMovement, ServerHandle.PlayerMovement },
+                { (int)ClientPackets.moveTo, ServerHandle.MoveTo },
             };
             Console.WriteLine("Initialized packets.");
         }

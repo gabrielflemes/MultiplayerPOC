@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MyApp\\MultiplayerPOC\\GameServer-POC\\GameServer\\GameServer.csproj": {}
+    "C:\\MyApp\\MultiplayerRPG_POC\\MultiplayerPOC\\Server\\GameServer\\GameServer.csproj": {}
   },
   "projects": {
-    "C:\\MyApp\\MultiplayerPOC\\GameServer-POC\\GameServer\\GameServer.csproj": {
+    "C:\\MyApp\\MultiplayerRPG_POC\\MultiplayerPOC\\Server\\GameServer\\GameServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MyApp\\MultiplayerPOC\\GameServer-POC\\GameServer\\GameServer.csproj",
+        "projectUniqueName": "C:\\MyApp\\MultiplayerRPG_POC\\MultiplayerPOC\\Server\\GameServer\\GameServer.csproj",
         "projectName": "GameServer",
-        "projectPath": "C:\\MyApp\\MultiplayerPOC\\GameServer-POC\\GameServer\\GameServer.csproj",
+        "projectPath": "C:\\MyApp\\MultiplayerRPG_POC\\MultiplayerPOC\\Server\\GameServer\\GameServer.csproj",
         "packagesPath": "C:\\Users\\User01\\.nuget\\packages\\",
-        "outputPath": "C:\\MyApp\\MultiplayerPOC\\GameServer-POC\\GameServer\\obj\\",
+        "outputPath": "C:\\MyApp\\MultiplayerRPG_POC\\MultiplayerPOC\\Server\\GameServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
