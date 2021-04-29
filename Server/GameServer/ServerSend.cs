@@ -139,7 +139,7 @@ namespace GameServer
             using (Packet _packet = new Packet((int)ServerPackets.moveTo))
             {
                 _packet.Write(_player.id);
-                _packet.Write(_point);
+                _packet.Write(_player.position);
 
                 SendUDPDataToAll(_packet);
             }

@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Net;
 using System.Net.Sockets;
 using System;
+using UnityEngine.UI;
 
 public class Client : MonoBehaviour
 {
@@ -32,6 +33,9 @@ public class Client : MonoBehaviour
         }
         else if (instance != null)
         {
+            //send message to client log
+            MessageWorld.instance.SendMessageWorld("Instance already exists, destroying object.");
+
             Debug.Log("Instance already exists, destroying object.");
             Destroy(this);
         }
@@ -76,6 +80,9 @@ public class Client : MonoBehaviour
 
             receiveBuffer = new byte[dataBufferSize];
             socket.BeginConnect(instance.ip, instance.port, ConnectionCallback, socket);
+
+            //send message to client log
+            MessageWorld.instance.SendMessageWorld("TCP Connected.");
         }
 
         /// <summary>Initializes the newly connected client's TCP-related info.</summary>
@@ -109,6 +116,8 @@ public class Client : MonoBehaviour
             }
             catch (Exception _err)
             {
+                //send message to client log
+                MessageWorld.instance.SendMessageWorld($"Error sending data to serve via TCP: {_err}");
 
                 Debug.Log($"Error sending data to serve via TCP: {_err}");
             }
@@ -209,6 +218,9 @@ public class Client : MonoBehaviour
             receiveBuffer = null;
             receivedData = null;
             socket = null;
+
+            //send message to client log
+            MessageWorld.instance.SendMessageWorld($"Disconnected from server.");
         }
 
 
@@ -231,14 +243,27 @@ public class Client : MonoBehaviour
         /// <param name="_localPort">The port number to bind the UDP socket to.</param>
         public void Connect(int localPort)
         {
-            socket = new UdpClient(localPort); //instantiate a udp client
-            socket.Connect(endPoint); //connect to endpoint
-            socket.BeginReceive(ReceiveCallback, null); //Receives a datagram from a remote host asynchronously.
-
-            using (Packet packet = new Packet())
+            try
             {
-                SendData(packet);
+                socket = new UdpClient(localPort); //instantiate a udp client
+                socket.Connect(endPoint); //connect to endpoint
+                socket.BeginReceive(ReceiveCallback, null); //Receives a datagram from a remote host asynchronously.
+
+                using (Packet packet = new Packet())
+                {
+                    SendData(packet);
+                }
+
+                //send message to client log
+                MessageWorld.instance.SendMessageWorld("UDP Connected.");
             }
+            catch (Exception ex)
+            {
+
+                //send message to client log
+                MessageWorld.instance.SendMessageWorld("UDP Error:" + ex.Message);
+            }
+            
         }
 
 
@@ -256,6 +281,8 @@ public class Client : MonoBehaviour
             }
             catch (Exception ex)
             {
+                //send message to client log
+                MessageWorld.instance.SendMessageWorld($"Error sending data to serve via UDP: {ex}");
 
                 Debug.Log($"Error sending data to server via UDP: {ex}");
             }
@@ -313,6 +340,9 @@ public class Client : MonoBehaviour
 
             endPoint = null;
             socket = null;
+
+            //send message to client log
+            MessageWorld.instance.SendMessageWorld($"Disconnected from server.");
         }
 
     }
@@ -330,6 +360,9 @@ public class Client : MonoBehaviour
                 { (int)ServerPackets.moveTo, ClientHandle.MoveTo }
         };
 
+        //send message to client log
+        MessageWorld.instance.SendMessageWorld("Initialized packetes.");
+
         Debug.Log("Initialized packetes.");
 
     }
@@ -342,6 +375,9 @@ public class Client : MonoBehaviour
             isConnected = false;
             tcp.socket.Close();
             udp.socket.Close();
+
+            //send message to client log
+            MessageWorld.instance.SendMessageWorld("Disconnected from server.");
 
             Debug.Log("Disconnected from server.");
         }

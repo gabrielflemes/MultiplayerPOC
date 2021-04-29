@@ -10,6 +10,7 @@ ScriptsOnlyBuild:
     - InventorySlot
     - InventoryUI
     - Item
+    - MessageWorld
     - Player.PlayerMovement
     - PlayerManager
     - TagName
@@ -130,6 +131,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3782}
     - Class: 114
       Script: {instanceID: 3822}
+    - Class: 114
+      Script: {instanceID: 92444}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -881,7 +884,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: da9938c8b12dcd1e8890d591f4d66515
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MessageWorld
   platform: 5
   scenePathNames:
   - Assets/Scenes/Main.unity
-  playerPath: C:/MyProjectsUnity/3DRPG03/Build/3DRPG03.exe
+  playerPath: C:/MyApp/MultiplayerRPG_POC/MultiplayerPOC/Client/Build/3DRPG03.exe

@@ -15,6 +15,9 @@ public class ClientHandle : MonoBehaviour
         string _msg = _packet.ReadString();
         int _myId = _packet.ReadInt();
 
+        //send message to client log
+        MessageWorld.instance.SendMessageWorld($"{_myId} : {_msg}");
+
         Debug.Log($"{_myId} : {_msg}");
         Client.instance.myId = _myId;       
         ClientSend.WelcomeReceived(); //send welcome received packet

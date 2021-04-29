@@ -18,6 +18,10 @@ namespace Interactable
         //any interable object can override this method to implement your own behavior
         public virtual void Interact()
         {
+
+            //send message to client log
+            MessageWorld.instance.SendMessageWorld("Interacting with " + transform.name);
+
             //this method is meant to be overwritten
             Debug.Log("Interacting with " + transform.name);
         }

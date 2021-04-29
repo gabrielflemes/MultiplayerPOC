@@ -19,6 +19,9 @@ public class UIManager : MonoBehaviour
         }
         else if (instance != null)
         {
+            //send message to client log
+            MessageWorld.instance.SendMessageWorld("Instance already exists - UIManager");
+
             Debug.Log("Instance already exists");
             Destroy(this);
         }
@@ -37,6 +40,7 @@ public class UIManager : MonoBehaviour
 
         Client.instance.ConnectToServer();
     }
+
 
 
 

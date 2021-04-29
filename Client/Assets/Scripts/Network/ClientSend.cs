@@ -61,7 +61,6 @@ public class ClientSend : MonoBehaviour
     {
         using (Packet _packet = new Packet((int)ClientPackets.moveTo))
         {
-            _packet.Write(Client.instance.myId);
             _packet.Write(point);
 
             SendUDPData(_packet);

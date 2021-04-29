@@ -16,6 +16,8 @@ public class Item : ScriptableObject
     public virtual void Use()
     {
         //Use the Item
+        //send message to client log
+        MessageWorld.instance.SendMessageWorld("Use the Item" + itemName);
         Debug.Log("Use the Item" + itemName);
     }
 }

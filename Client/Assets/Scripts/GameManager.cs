@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
         }
         else if (instance != null)
         {
+            //send message to client log
+            MessageWorld.instance.SendMessageWorld("Instance already exists, destroying object.");
+
             Debug.Log("Instance already exists, destroying object.");
             Destroy(this);
         }
@@ -39,15 +42,18 @@ public class GameManager : MonoBehaviour
 
         if (_id == Client.instance.myId)
         {
+            //spawn local player
             player = Instantiate(localPlayerPrefab, _position, _rotation);
+
+            //set camera on the player
+            Camera.main.gameObject.GetComponent<CameraController>().target = player.transform;
         }
         else
         {
             player = Instantiate(playerPrefab, _position, _rotation);
-        }
 
-        //set camera on the player
-        Camera.main.gameObject.GetComponent<CameraController>().target = player.transform;
+        }
+      
 
         // I use GetComponentInChildren, cos my PlayerManager is in the GameObject inside "Player"
         //to access my PlayerManager component, I neet to acess where the component is located

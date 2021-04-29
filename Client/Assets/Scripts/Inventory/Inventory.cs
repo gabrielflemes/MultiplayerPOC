@@ -14,6 +14,9 @@ public class Inventory : MonoBehaviour
     {
         if (instance != null)
         {
+            //send message to client log
+            MessageWorld.instance.SendMessageWorld("More than one instance of Inventory found!");
+
             Debug.LogWarning("More than one instance of Inventory found!");
             return;
         }
@@ -59,6 +62,9 @@ public class Inventory : MonoBehaviour
             }
             else
             {
+                //send message to client log
+                MessageWorld.instance.SendMessageWorld("Inventory is Full!");
+
                 Debug.Log("Inventory is Full.");
                 return false;
             }

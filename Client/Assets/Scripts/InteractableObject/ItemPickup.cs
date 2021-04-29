@@ -21,6 +21,8 @@ namespace Interactable {
 
         private void PickUp()
         {
+            //send message to client log
+            MessageWorld.instance.SendMessageWorld("picking up item " + item.itemName);
             Debug.Log("picking up item " + item.itemName);
 
             //add to inventory by Singleton 
