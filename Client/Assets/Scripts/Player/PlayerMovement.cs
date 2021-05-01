@@ -78,6 +78,9 @@ namespace Player
                     ///
                     InteractableObject interactableObject = hit.collider.GetComponent<InteractableObject>(); //get InteractableObject component
 
+                    //send message to client log
+                    MessageWorld.instance.SendMessageWorld($"Interactable Object: {interactableObject.name}");
+
                     //if InteractableObject is not null, in other word if we clicked on GameObject that have InteractableObject Scrpt, so get in the if
                     //and setFocus, 
                     if (interactableObject != null)
@@ -99,25 +102,22 @@ namespace Player
                 FaceTarget();
             }
 
-            //TODO send position to server
-            //GameManager.players[Client.instance.myId].transform.position = agent.transform.position;
-            //GameManager.players[Client.instance.myId].transform.rotation = agent.transform.rotation;
-            //ClientSend.PlayerMovement();
         }
     
 
         //method to move our agent/player to the position we pass as parameter
         private void MoveToPoint(Vector3 _point)
         {
-            ClientSend.MoveTo(_point);
 
-            //agent.SetDestination(point);
-            
+            ClientSend.MoveTo(_point);        
         }
 
         //method
         private void FollowTarget(InteractableObject newTarget)
         {
+            //send message to client log
+            MessageWorld.instance.SendMessageWorld($"Following: {newTarget.name}");
+
             agent.stoppingDistance = newTarget.radius * .8f;
             agent.updateRotation = false;
             target = newTarget.interactionTransform;
@@ -127,6 +127,9 @@ namespace Player
         //method
         private void StopFollowingTarget()
         {
+            //send message to client log
+            MessageWorld.instance.SendMessageWorld($"StopFollowingTarget");
+
             agent.stoppingDistance = 0f;
             agent.updateRotation = true;
             target = null;
@@ -136,6 +139,9 @@ namespace Player
         //method
         private void RemoveFocus()
         {
+            //send message to client log
+            MessageWorld.instance.SendMessageWorld($"RemoveFocus");
+
             if (focus != null)
             {
                 focus.OnDefocused();
@@ -149,6 +155,9 @@ namespace Player
         //method
         private void SetFocus(InteractableObject newFocus)
         {
+            //send message to client log
+            MessageWorld.instance.SendMessageWorld($"SetFocus");
+
             if (newFocus != focus)
             {
                 if (focus != null)
@@ -163,11 +172,15 @@ namespace Player
 
 
             newFocus.OnFocused(transform);
+            
 
         }
 
         private void FaceTarget()
         {
+            //send message to client log
+            //MessageWorld.instance.SendMessageWorld($"FaceTarget");
+
             Vector3 direction = (target.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);

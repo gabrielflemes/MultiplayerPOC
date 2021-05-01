@@ -34,10 +34,14 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Main.unity:
@@ -76,6 +80,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1448}
     - Class: 114
+      Script: {instanceID: 1718}
+    - Class: 114
       Script: {instanceID: 2032}
     - Class: 114
       Script: {instanceID: 2082}
@@ -90,6 +96,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2452}
     - Class: 114
+      Script: {instanceID: 2592}
+    - Class: 114
       Script: {instanceID: 2652}
     - Class: 114
       Script: {instanceID: 2676}
@@ -97,6 +105,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2752}
     - Class: 114
       Script: {instanceID: 2766}
+    - Class: 114
+      Script: {instanceID: 2792}
     - Class: 114
       Script: {instanceID: 2848}
     - Class: 114
@@ -125,6 +135,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3574}
     - Class: 114
       Script: {instanceID: 3640}
+    - Class: 114
+      Script: {instanceID: 3654}
     - Class: 114
       Script: {instanceID: 3762}
     - Class: 114

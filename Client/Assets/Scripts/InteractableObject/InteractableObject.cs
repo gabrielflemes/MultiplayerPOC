@@ -32,6 +32,10 @@ namespace Interactable
             if (isFocus && !hasInteracted)
             {
                 float distance = Vector3.Distance(player.position, interactionTransform.position);
+
+                //send message to client log
+                MessageWorld.instance.SendMessageWorld($"UPDATE: {Client.instance.myId} : {player} - {player.position}");
+
                 if (distance <= radius)
                 {
                     Interact();
@@ -43,6 +47,9 @@ namespace Interactable
         //is called by PlayerMovement when the Righ-Click Mouse is pressed and the GameObject is set on InteractableObject
         public void OnFocused(Transform playerTransform)
         {
+            //send message to client log
+            MessageWorld.instance.SendMessageWorld($"{Client.instance.myId} : {playerTransform} - {playerTransform.position}");
+
             isFocus = true;
             player = playerTransform;
             hasInteracted = false;
