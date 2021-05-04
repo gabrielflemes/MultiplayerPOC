@@ -78,6 +78,7 @@ public class Inventory : MonoBehaviour
     }
 
 
+
     //remove item from our inventory
     public void Remove(Item item)
     {

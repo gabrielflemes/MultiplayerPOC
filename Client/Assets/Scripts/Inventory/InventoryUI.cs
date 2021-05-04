@@ -8,6 +8,8 @@ public class InventoryUI : MonoBehaviour
     //this is the GameObject that contains all my slots
     public Transform itemsParent;
 
+    public Transform itemsParentEquip;
+
     //make reference to Inventory GameObject just to Active and Inactive when we press 'I' button
     public GameObject inventoryUI;
 
@@ -16,6 +18,7 @@ public class InventoryUI : MonoBehaviour
 
     //countains my slots
     private InventorySlot[] slots;
+    private EquipmentSlot[] equipSlots; 
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +29,13 @@ public class InventoryUI : MonoBehaviour
         //subscribe UpdateUI() to be called every time we change our Inventory
         inventory.onInventoryChangeCallback += UpdateUI;
 
+        //subscribe UpdateEquipmentUI() to be called every time we change our Inventory
+        EquipmentManager.instance.onEquipmentChanged += UpdateEquipmentUI;
+
         //get all slots
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        equipSlots = itemsParentEquip.GetComponentsInChildren<EquipmentSlot>();
+
     }
 
    
@@ -57,6 +65,32 @@ public class InventoryUI : MonoBehaviour
                 slots[i].RemoveItemFromSlot();
             }
         }
+
+
+       
     }
+
+
+    /// <summary>
+    /// Update UI
+    /// </summary>
+    /// <param name="newItem"></param>
+    /// <param name="oldItem"></param>
+    private void UpdateEquipmentUI(Equipment newItem, Equipment oldItem)
+    {
+        //
+        for (int i = 0; i < equipSlots.Length; i++)
+        {
+            if (equipSlots[i].slot == newItem.equipSlot)
+            {
+                equipSlots[i].AddItemToSlot(newItem);
+            }
+           
+        }
+ 
+
+    }
+
+
 
 }

@@ -2,6 +2,7 @@ using Cam;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GameManager : MonoBehaviour
 {
@@ -45,8 +46,8 @@ public class GameManager : MonoBehaviour
             //spawn local player
             player = Instantiate(localPlayerPrefab, _position, _rotation);
 
-            //set camera on the player
-            Camera.main.gameObject.GetComponent<CameraController>().target = player.transform;
+            //set agent to target camera
+            Camera.main.gameObject.GetComponent<CameraController>().target = player.GetComponentInChildren<NavMeshAgent>().transform;
         }
         else
         {
